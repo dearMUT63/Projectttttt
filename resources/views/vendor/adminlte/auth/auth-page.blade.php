@@ -36,18 +36,19 @@
                             height="{{ config('adminlte.auth_logo.img.height') }}"
                          @endif>
                 @else
-                    <img src="{{ asset(config('adminlte.logo_img')) }}"
-                         alt="{{ config('adminlte.logo_img_alt') }}" height="50">
+                    <img src="{{ asset('images/ROZYFOOD.png') }}" height="70">
                 @endif
 
                 {{-- Logo Label --}}
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+                {!! config('ROZYFOOD', '<b><b><b>ROZYFOOD</b></b></b>') !!}
 
             </a>
         </div>
 
         {{-- Card Box --}}
+
         <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
+
 
             {{-- Card Header --}}
             @hasSection('auth_header')
@@ -59,17 +60,22 @@
             @endif
 
             {{-- Card Body --}}
+            {{-- <div class="screen2"></div> --}}
             <div class="card-body {{ $auth_type ?? 'login' }}-card-body {{ config('adminlte.classes_auth_body', '') }}">
                 @yield('auth_body')
+
             </div>
 
             {{-- Card Footer --}}
+
             @hasSection('auth_footer')
+
                 <div class="card-footer {{ config('adminlte.classes_auth_footer', '') }}">
                     @yield('auth_footer')
                 </div>
-            @endif
 
+            @endif
+{{-- <div class="screen3"></div> --}}
         </div>
 
     </div>
