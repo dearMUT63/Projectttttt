@@ -1,3 +1,22 @@
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <title>LOGIN</title>
+        <style type="text/css">
+            body {
+                background: linear-gradient(90deg, #f1dcb5, #e9c480);
+            }
+            .screen3 {
+                text-align: center;
+                background: linear-gradient(90deg, #dee763, #ecf021);
+                height: 320px;
+                width: 360px;
+            }
+        </style>
+    </head>
+</html>
+
 @extends('adminlte::auth.auth-page', ['auth_type' => 'login'])
 
 {{-- @section('adminlte_css_pre')

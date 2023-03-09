@@ -1,11 +1,11 @@
 @extends('adminlte::master')
 
-@php( $dashboard_url = View::getSection('dashboard_url') ?? config('adminlte.dashboard_url', 'home') )
+@php($dashboard_url = View::getSection('dashboard_url') ?? config('adminlte.dashboard_url', 'home'))
 
 @if (config('adminlte.use_route_url', false))
-    @php( $dashboard_url = $dashboard_url ? route($dashboard_url) : '' )
+    @php($dashboard_url = $dashboard_url ? route($dashboard_url) : '')
 @else
-    @php( $dashboard_url = $dashboard_url ? url($dashboard_url) : '' )
+    @php($dashboard_url = $dashboard_url ? url($dashboard_url) : '')
 @endif
 
 @section('adminlte_css')
@@ -16,40 +16,25 @@
 @section('classes_body'){{ ($auth_type ?? 'login') . '-page' }}@stop
 
 @section('body')
-    <div class="{{ $auth_type ?? 'login' }}-box">
 
+    <div class="{{ ($auth_type ?? 'login') . 'center' }}-box">
         {{-- Logo --}}
+
         <div class="{{ $auth_type ?? 'login' }}-logo">
             <a href="{{ $dashboard_url }}">
-
                 {{-- Logo Image --}}
-                @if (config('adminlte.auth_logo.enabled', false))
-                    <img src="{{ asset(config('adminlte.auth_logo.img.path')) }}"
-                         alt="{{ config('adminlte.auth_logo.img.alt') }}"
-                         @if (config('adminlte.auth_logo.img.class', null))
-                            class="{{ config('adminlte.auth_logo.img.class') }}"
-                         @endif
-                         @if (config('adminlte.auth_logo.img.width', null))
-                            width="{{ config('adminlte.auth_logo.img.width') }}"
-                         @endif
-                         @if (config('adminlte.auth_logo.img.height', null))
-                            height="{{ config('adminlte.auth_logo.img.height') }}"
-                         @endif>
-                @else
-                    <img src="{{ asset('images/ROZYFOOD.png') }}" height="70">
-                @endif
-
-                {{-- Logo Label --}}
-                {!! config('ROZYFOOD', '<b><b><b>ROZYFOOD</b></b></b>') !!}
-
+                <img src="{{ asset('images/ROZYFOOD.png') }}" height="150">
             </a>
+
+            {{-- Logo Label --}}
+            <h5 class="card-title float-none text-center">
+                <p style="font-size: 36pt">
+                    {!! config('ROXYFOOD', '<b><b><b>ROXYFOOD</b></b></b>') !!}
+                </p>
+            </h5>
         </div>
 
-        {{-- Card Box --}}
-
-        <div class="card {{ config('adminlte.classes_auth_card', 'card-outline card-primary') }}">
-
-
+        <div class="screen3">
             {{-- Card Header --}}
             @hasSection('auth_header')
                 <div class="card-header {{ config('adminlte.classes_auth_header', '') }}">
@@ -75,7 +60,6 @@
                 </div>
 
             @endif
-{{-- <div class="screen3"></div> --}}
         </div>
 
     </div>
