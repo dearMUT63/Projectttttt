@@ -1,8 +1,27 @@
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <title>LOGIN</title>
+        <style type="text/css">
+            body {
+                background: linear-gradient(90deg, #f1dcb5, #e9c480);
+            }
+            .screen3 {
+                text-align: center;
+                background: linear-gradient(90deg, #dee763, #ecf021);
+                height: 320px;
+                width: 360px;
+            }
+        </style>
+    </head>
+</html>
+
 @extends('adminlte::auth.auth-page', ['auth_type' => 'login'])
 
-@section('adminlte_css_pre')
+{{-- @section('adminlte_css_pre')
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-@stop
+@stop --}}
 
 @php( $login_url = View::getSection('login_url') ?? config('adminlte.login_url', 'login') )
 @php( $register_url = View::getSection('register_url') ?? config('adminlte.register_url', 'register') )
@@ -18,13 +37,15 @@
     @php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
 @endif
 
-@section('auth_header', __('adminlte::adminlte.login_message'))
+
+@section('auth_header', __('Login Your Account'))
 
 @section('auth_body')
     <form action="{{ $login_url }}" method="post">
         @csrf
 
         {{-- Email field --}}
+
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                    value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
@@ -43,6 +64,7 @@
         </div>
 
         {{-- Password field --}}
+
         <div class="input-group mb-3">
             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
                    placeholder="{{ __('adminlte::adminlte.password') }}">

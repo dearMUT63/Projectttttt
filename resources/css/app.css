@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+            table {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: Raleway, sans-serif;
+            }
+            body {
+                background: linear-gradient(90deg, #f1dcb5, #e9c480);
+            }
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .screen {
+                background: linear-gradient(90deg, #ffffff, #ffffff);
+                position: relative;
+                height: 400px;
+                width: 320px;
+            }
+            .screen2 {
+                background: linear-gradient(90deg, #fffaf0, #fffaf0);
+                position: absolute;
+                height: 560px;
+                width: 360px;
+            }
+            .screen3 {
+                text-align: center;
+                background: linear-gradient(90deg, #dee763, #ecf021);
+                position: absolute;
+                height: 320px;
+                width: 360px;
+                left: 40.5%;
+            }
+
+            .screen__content {
+                z-index: 1;
+                position: relative;
+                height: 100%;
+            }
+
+            .screen__background {
+                background-image: url("Menu.png");
+            }
+            .Logo {
+                position: relative;
+                top: 50%;
+            }
+
+            .screen__background__shape {
+                transform: rotate(45deg);
+                position: absolute;
+            }
